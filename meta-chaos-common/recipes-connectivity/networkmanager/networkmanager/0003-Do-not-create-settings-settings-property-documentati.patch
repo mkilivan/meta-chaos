@@ -1,0 +1,81 @@
+From 133bd508e6d856671654e8944e255c2abc283a9d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Andreas=20M=C3=BCller?= <schnitzeltony@gmail.com>
+Date: Thu, 22 Mar 2018 11:08:30 +0100
+Subject: [PATCH 3/3] Do not create settings settings/property documentation
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+It was tried to get this work but gi / GirRepository could not be found by
+python. Anyway it is not necessary for us to have the settings/property docs.
+
+Upstream-Status: Inappropriate [OE specific]
+
+Signed-off-by: Andreas Müller <schnitzeltony@gmail.com>
+---
+ Makefile.am  | 21 +--------------------
+ configure.ac |  5 -----
+ 2 files changed, 1 insertion(+), 25 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index cdb5cfc..882f8d9 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -1025,9 +1025,7 @@ EXTRA_DIST += \
+ if HAVE_INTROSPECTION
+ 
+ libnm_noinst_data = \
+-	libnm/nm-property-docs.xml \
+ 	libnm/nm-settings-docs-overrides.xml \
+-	libnm/nm-settings-docs.xml \
+ 	libnm/nm-settings-keyfile-docs.xml \
+ 	libnm/nm-settings-ifcfg-rh-docs.xml
+ 
+@@ -3462,27 +3460,10 @@ $(clients_common_libnmc_base_la_OBJECTS): $(libnm_lib_h_pub_mkenums)
+ $(clients_common_libnmc_base_la_OBJECTS): clients/common/.dirstamp
+ 
+ clients_common_settings_doc_h = clients/common/settings-docs.h
+-if HAVE_INTROSPECTION
+-$(clients_common_settings_doc_h): clients/common/settings-docs.xsl libnm/nm-property-docs.xml clients/common/.dirstamp
+-	$(AM_V_GEN) $(XSLTPROC) --output $@ $< $(word 2,$^)
+-DISTCLEANFILES += $(clients_common_settings_doc_h)
+-check-local-settings-docs: $(clients_common_settings_doc_h)
+-	@if test -z "$$NMTST_NO_CHECK_SETTINGS_DOCS" ; then \
+-		if ! cmp -s "$(srcdir)/$(clients_common_settings_doc_h).in" "$(builddir)/$(clients_common_settings_doc_h)" ; then \
+-			if test "$$NM_TEST_REGENERATE" == 1 ; then \
+-				cp -f "$(builddir)/$(clients_common_settings_doc_h)" "$(srcdir)/$(clients_common_settings_doc_h).in"; \
+-			else \
+-				echo "The generated file \"$(builddir)/$(clients_common_settings_doc_h)\" differs from the source file \"$(srcdir)/$(clients_common_settings_doc_h).in\". You probably should copy the generated file over to the source file. You can skip this test by setting \$$NMTST_NO_CHECK_SETTINGS_DOCS=yes". You can also automatically copy the file by rerunning the test with \$$NM_TEST_REGENERATE=1 ; \
+-				false; \
+-			fi; \
+-		fi;\
+-	fi
+-check_local += check-local-settings-docs
+-else
+ $(clients_common_settings_doc_h): $(clients_common_settings_doc_h).in clients/common/.dirstamp
+ 	$(AM_V_GEN) cp "$(srcdir)/$(clients_common_settings_doc_h).in" "$(builddir)/$(clients_common_settings_doc_h)"
+ check-local-settings-docs:
+-endif
++
+ EXTRA_DIST += \
+ 	$(clients_common_settings_doc_h) \
+ 	$(clients_common_settings_doc_h).in
+diff --git a/configure.ac b/configure.ac
+index a7b9207..c4833c6 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -1223,11 +1223,6 @@ GTK_DOC_CHECK(1.0)
+ # check if we can build setting property documentation
+ build_docs=no
+ if test -n "$INTROSPECTION_MAKEFILE"; then
+-	# If g-i is installed we know we have python, but we might not have pygobject
+-	if ! "$PYTHON" -c 'from gi.repository import GObject' >& /dev/null; then
+-		AC_MSG_ERROR(["--enable-introspection aims to build the settings documentation. This requires GObject introspection for python (pygobject)])
+-	fi
+-
+ 	AC_PATH_PROG(PERL, perl)
+ 	if test -z "$PERL"; then
+ 		AC_MSG_ERROR([--enable-introspection requires perl])
+-- 
+2.17.1
+
