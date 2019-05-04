@@ -11,11 +11,9 @@ SRC_URI_append = " \
 RDEPENDS_${PN}_append = " \
     chrony \
     chronyc \
-    resolvconf \
     "
 FILES_${PN}_append = " ${sysconfdir}/*"
 EXTRA_OECONF += " \
-    --with-resolvconf=/sbin/resolvconf \
     --disable-ovs \
     "
 PACKAGECONFIG_append = " modemmanager ppp"
@@ -39,8 +37,6 @@ do_install_append() {
         install -d ${D}${sysconfdir}/systemd/system/NetworkManager.service.d
         install -m 0644 ${WORKDIR}/NetworkManager.conf.systemd ${D}${sysconfdir}/systemd/system/NetworkManager.service.d/NetworkManager.conf
     fi
-
-    ln -s /var/run/resolvconf/interface/NetworkManager ${D}/etc/resolv.dnsmasq
 
     # remove these empty not-used (at this moment) directories so we don't have to package them
     rmdir ${D}${libdir}/NetworkManager/conf.d

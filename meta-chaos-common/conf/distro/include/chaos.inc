@@ -1,6 +1,5 @@
 # Poky based distro file
 require conf/distro/poky.conf
-require conf/distro/include/security_flags.inc
 
 DISTRO = "chaos"
 DISTRO_NAME = "CHAOS"

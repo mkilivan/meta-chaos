@@ -37,10 +37,10 @@ CONNECTIVITY_FIRMWARES ?= " \
 CONNECTIVITY_PACKAGES = " \
     ${NETWORK_MANAGER_PACKAGES} \
     avahi-daemon \
+    bluez5 \
     crda \
-    dnsmasq \
     usb-modeswitch \
-    wireless-tools \
+    iw \
     "
 
 RDEPENDS_${PN} = " \
