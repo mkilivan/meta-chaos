@@ -20,5 +20,6 @@ IMAGE_INSTALL = " \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     packagegroup-chaos-connectivity \
     packagegroup-chaos \
+    e2fsprogs \
     "
 

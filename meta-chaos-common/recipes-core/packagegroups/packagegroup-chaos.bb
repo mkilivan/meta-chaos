@@ -10,4 +10,5 @@ include packagegroup-chaos.inc
 # Additional packages
 RDEPENDS_${PN} += " \
     docker-ce \
+    filesystem-expand \
     "
