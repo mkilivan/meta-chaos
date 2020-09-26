@@ -7,7 +7,9 @@ REQUIRED_DISTRO_FEATURES += " systemd"
 IMAGE_ROOTFS_SIZE ?= "12288"
 IMAGE_ROOTFS_EXTRA_SPACE = "0"
 
-inherit core-image distro_features_check
+inherit core-image features_check
+
+IMAGE_FSTYPES = "rpi-sdimg"
 
 IMAGE_FEATURES_append = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'development-image', 'debug-tweaks', '', d)} \
