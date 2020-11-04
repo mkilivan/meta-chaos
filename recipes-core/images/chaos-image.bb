@@ -7,7 +7,7 @@ REQUIRED_DISTRO_FEATURES += " systemd"
 IMAGE_ROOTFS_SIZE ?= "12288"
 IMAGE_ROOTFS_EXTRA_SPACE = "0"
 
-inherit core-image features_check
+inherit core-image features_check extrausers
 
 IMAGE_FSTYPES = "rpi-sdimg"
 
@@ -23,5 +23,5 @@ IMAGE_INSTALL = " \
     packagegroup-chaos-connectivity \
     packagegroup-chaos \
     e2fsprogs \
+    homebridge \
     "
-
