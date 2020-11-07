@@ -186,7 +186,9 @@ FILES_${PN} += " \
     ${systemd_unitdir}/system/homebridge.service \
 "
 
-SYSTEMD_SERVICE_${PN} = "homebridge.service"
+inherit systemd
+
+SYSTEMD_SERVICE_${PN} = "${@bb.utils.contains('DISTRO_FEATURES','systemd','homebridge.service','',d)}"
 
 LICENSE_${PN} = "Apache-2.0"
 LICENSE_${PN}-ansi-styles = "MIT"
