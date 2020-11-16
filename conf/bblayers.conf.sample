@@ -16,5 +16,4 @@ BBLAYERS ?= " \
   ##OEROOT##/meta-raspberrypi \
   ##OEROOT##/meta-chaos \
   ##OEROOT##/meta-chaos-raspberrypi \
-  ##OEROOT##/meta-wifi-credentials/networkmanager \
   "
