@@ -35,6 +35,7 @@ CONNECTIVITY_FIRMWARES ?= " \
 
 CONNECTIVITY_PACKAGES = " \
     ${NETWORK_MANAGER_PACKAGES} \
+    wifi-connect \
     avahi-daemon \
     bluez5 \
     crda \
