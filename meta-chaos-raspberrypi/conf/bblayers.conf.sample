@@ -15,6 +15,6 @@ BBLAYERS ?= " \
   ##OEROOT##/meta-rust \
   ##OEROOT##/meta-virtualization \
   ##OEROOT##/meta-raspberrypi \
-  ##OEROOT##/meta-chaos \
-  ##OEROOT##/meta-chaos-raspberrypi \
+  ##OEROOT##/meta-chaos/meta-chaos-core \
+  ##OEROOT##/meta-chaos/meta-chaos-raspberrypi \
   "

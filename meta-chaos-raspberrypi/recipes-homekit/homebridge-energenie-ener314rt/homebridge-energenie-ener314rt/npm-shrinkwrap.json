@@ -1,0 +1,13 @@
+{
+  "name": "homebridge-energenie-ener314rt",
+  "version": "1.0.1",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "energenie-ener314rt": {
+      "version": "0.3.4",
+      "resolved": "https://registry.npmjs.org/energenie-ener314rt/-/energenie-ener314rt-0.3.4.tgz",
+      "integrity": "sha512-7DJzVljMkDqCgmvWbs0/4Uw3CntcfRjA2zEmmVYtCD8axBK7H5vcRsdIZ7Yq84vAjcDRyaLoC0KMDcTXCZm1fw=="
+    }
+  }
+}
