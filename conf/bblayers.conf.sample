@@ -12,6 +12,7 @@ BBLAYERS ?= " \
   ##OEROOT##/meta-openembedded/meta-networking \
   ##OEROOT##/meta-openembedded/meta-python \
   ##OEROOT##/meta-openembedded/meta-filesystems \
+  ##OEROOT##/meta-rust \
   ##OEROOT##/meta-virtualization \
   ##OEROOT##/meta-raspberrypi \
   ##OEROOT##/meta-chaos \
