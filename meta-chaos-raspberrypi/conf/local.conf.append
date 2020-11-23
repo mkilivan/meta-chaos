@@ -1,0 +1,6 @@
+
+# Appended fragment from meta-chaos-community/meta-chaos-raspberrypi/templates
+
+MACHINE ?= "raspberrypi3"
+IMAGE_FSTYPES = "rpi-sdimg"
+IMAGE_INSTALL_append ="homebridge-energenie-ener314rt"

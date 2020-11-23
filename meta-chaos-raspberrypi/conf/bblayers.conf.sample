@@ -5,16 +5,16 @@ POKY_BBLAYERS_CONF_VERSION = "2"
 BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 BBLAYERS ?= " \
-  ##OEROOT##/meta \
-  ##OEROOT##/meta-poky \
-  ##OEROOT##/meta-openembedded/meta-oe \
-  ##OEROOT##/meta-openembedded/meta-multimedia \
-  ##OEROOT##/meta-openembedded/meta-networking \
-  ##OEROOT##/meta-openembedded/meta-python \
-  ##OEROOT##/meta-openembedded/meta-filesystems \
-  ##OEROOT##/meta-rust \
-  ##OEROOT##/meta-virtualization \
-  ##OEROOT##/meta-raspberrypi \
-  ##OEROOT##/meta-chaos/meta-chaos-core \
-  ##OEROOT##/meta-chaos/meta-chaos-raspberrypi \
+  ${TOPDIR}/../sources/poky/meta \
+  ${TOPDIR}/../sources/poky/meta-poky \
+  ${TOPDIR}/../sources/meta-openembedded/meta-oe \
+  ${TOPDIR}/../sources/meta-openembedded/meta-multimedia \
+  ${TOPDIR}/../sources/meta-openembedded/meta-networking \
+  ${TOPDIR}/../sources/meta-openembedded/meta-python \
+  ${TOPDIR}/../sources/meta-openembedded/meta-filesystems \
+  ${TOPDIR}/../sources/meta-rust \
+  ${TOPDIR}/../sources/meta-virtualization \
+  ${TOPDIR}/../sources/meta-raspberrypi \
+  ${TOPDIR}/../sources/meta-chaos/meta-chaos-core \
+  ${TOPDIR}/../sources/meta-chaos/meta-chaos-raspberrypi \
   "

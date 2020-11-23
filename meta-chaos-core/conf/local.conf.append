@@ -1,0 +1,14 @@
+
+# Appended fragment from meta-chaos-community/templates
+
+# This really saves a lot of disk space!
+INHERIT += "rm_work"
+
+DISTRO_FEATURES_append = " systemd virtualization wifi"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+VIRTUAL-RUNTIME_initscripts = ""
+
+IMAGE_INSTALL_append = "\
+    packagegroup-base networkmanager wifi-connect homebridge \
+    "

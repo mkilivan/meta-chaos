@@ -12,7 +12,7 @@ fi
 script_dir=$(dirname "$this_script")
 script_dir=$(readlink -f "$script_dir")
 
-community_dir=${script_dir}/sources/meta-chaos-community
+source_dir=${script_dir}/sources/meta-chaos
 build_dir=${script_dir}/build
 
 target=""
@@ -39,7 +39,7 @@ if [ -z "${target}" ]; then
     return 1
 fi
 
-target_templates=${community_dir}/bsp/${target}/templates
+target_templates=${source_dir}/meta-chaos-${target}/conf
 
 . ${script_dir}/sources/poky/oe-init-build-env ${build_dir}
 
@@ -48,7 +48,7 @@ if [ -f ${build_dir}/conf/append_complete ]; then
 fi
 
 # Common entries for Chaos
-cat ${community_dir}/templates/local.conf.append >> ${build_dir}/conf/local.conf
+cat ${source_dir}/meta-chaos-core/conf/local.conf.append >> ${build_dir}/conf/local.conf
 
 # Board specific entries
 cp ${target_templates}/bblayers.conf.sample ${build_dir}/conf/bblayers.conf
