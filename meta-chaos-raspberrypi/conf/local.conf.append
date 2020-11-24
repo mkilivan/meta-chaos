@@ -1,5 +1,5 @@
 
-# Appended fragment from meta-chaos-community/meta-chaos-raspberrypi/templates
+# Appended fragment from meta-chaos-raspberrypi/conf/local.conf.append
 
 MACHINE ?= "raspberrypi3"
 IMAGE_FSTYPES = "rpi-sdimg"

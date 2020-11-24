@@ -6,10 +6,6 @@ Please see the corresponding sections below for details.
 
 This layer depends on:
 
-    URI: git://github.com/mkilivan/meta-chaos
-    branch: master
-    revision: HEAD
-
     URI: git://git.yoctoproject.org/meta-raspberrypi
     branch: master
     revision: HEAD

@@ -1,0 +1,4 @@
+
+# Appended fragment from meta-chaos-qemu/conf/local.conf.append
+
+MACHINE ?= "qemux86-64"
