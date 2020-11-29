@@ -47,3 +47,6 @@ local_conf_header:
     VIRTUAL-RUNTIME_init_manager = "systemd"
     DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
     VIRTUAL-RUNTIME_initscripts = ""
+
+  debug-tweaks: |
+    EXTRA_IMAGE_FEATURES = "debug-tweaks"
