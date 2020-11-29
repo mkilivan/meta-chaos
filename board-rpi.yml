@@ -1,0 +1,15 @@
+header:
+  version: 8
+
+machine: raspberrypi3
+
+repos:
+  meta-raspberrypi:
+    url : "git://git.yoctoproject.org/meta-raspberrypi"
+    refspec : dunfell
+
+local_conf_header:
+  rpi-specific: |
+    ENABLE_UART = "1"
+    IMAGE_FSTYPES = "rpi-sdimg"
+    DISTRO_FEATURES_append = " wifi"

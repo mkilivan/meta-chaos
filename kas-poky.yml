@@ -1,0 +1,49 @@
+header:
+  version: 8
+
+distro: poky
+target: 
+  - homebridge-image
+
+repos:
+  meta-chaos:
+    
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    refspec: dunfell
+    layers:
+      meta:
+      meta-poky:
+      
+  meta-openembedded:
+    url: http://git.openembedded.org/meta-openembedded
+    refspec: dunfell
+    layers:
+      meta-oe:
+      meta-networking:
+      meta-python:
+      
+  meta-rust:
+    url: https://github.com/meta-rust/meta-rust
+    refspec: master
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+
+local_conf_header:
+  Reduce diskspace: |
+    INHERIT += "rm_work_and_downloads"
+  
+  Strip down unneeded features: |
+    POKY_DEFAULT_DISTRO_FEATURES_remove = "ptest"
+    POKY_DEFAULT_DISTRO_FEATURES_remove = "wayland"
+    DISTRO_FEATURES_DEFAULT_remove = "x11"
+
+  Switch to systemd: |
+    DISTRO_FEATURES_append = " systemd"
+    VIRTUAL-RUNTIME_init_manager = "systemd"
+    DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+    VIRTUAL-RUNTIME_initscripts = ""

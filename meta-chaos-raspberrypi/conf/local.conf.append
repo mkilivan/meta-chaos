@@ -1,6 +1,0 @@
-
-# Appended fragment from meta-chaos-raspberrypi/conf/local.conf.append
-
-MACHINE ?= "raspberrypi3"
-IMAGE_FSTYPES = "rpi-sdimg"
-IMAGE_INSTALL_append ="homebridge-energenie-ener314rt"
