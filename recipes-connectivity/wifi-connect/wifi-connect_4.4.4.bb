@@ -168,11 +168,8 @@ inherit systemd
 
 SYSTEMD_SERVICE_${PN} = "${@bb.utils.contains('DISTRO_FEATURES','systemd','wifi-connect.service','',d)}"
 
-
 # includes this file if it exists but does not fail
 # this is useful for anything you may want to override from
 # what cargo-bitbake generates.
 include wifi-connect-${PV}.inc
 include wifi-connect.inc
-
-
