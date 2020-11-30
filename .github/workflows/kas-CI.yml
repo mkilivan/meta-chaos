@@ -1,0 +1,30 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: kas-latest
+    env:
+      DL_DIR: ${{ secrets.DL_DIR }}
+      TMPDIR: ${{ secrets.TMPDIR }}
+      SSTATE_DIR: ${{ secrets.SSTATE_DIR }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Building poky image for rpi
+        run: |
+          kas build kas-poky.yml:board-rpi.yml
+
+      - name: Archive conf files
+        uses: actions/upload-artifact@v2
+        with:
+          name: conf
+          path: build/conf
+
+      - name: Archive SD card image artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: image
+          path: ${{env.TMPDIR}}/deploy/images/**/*.rpi-sdimg
