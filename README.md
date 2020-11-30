@@ -1,3 +1,5 @@
+![build](https://github.com/mkilivan/meta-chaos/workflows/build/badge.svg)
+
 # meta-chaos
 
 ## Description
