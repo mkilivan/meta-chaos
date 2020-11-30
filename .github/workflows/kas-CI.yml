@@ -17,14 +17,9 @@ jobs:
         run: |
           kas build kas-poky.yml:board-rpi.yml
 
-      - name: Archive conf files
+      - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: conf
-          path: build/conf
-
-      - name: Archive SD card image artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: image
-          path: ${{env.TMPDIR}}/deploy/images/**/*.rpi-sdimg
+          path: |
+            build/conf
+            ${{env.TMPDIR}}/deploy/images/**/*.rpi-sdimg

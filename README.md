@@ -1,5 +1,5 @@
 ![build](https://github.com/mkilivan/meta-chaos/workflows/build/badge.svg)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # meta-chaos
 
 ## Description
