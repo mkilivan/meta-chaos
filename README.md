@@ -4,7 +4,7 @@
 
 ## Description
 
-meta-chaos is a set of recipes for the poky build system, which enables cross-building GNU/Linux images for home automation projects. By enabling meta-chaos, you can cross-build some of popular projects, such as [Homebridge](https://github.com/homebridge/homebridge) and [wifi-connect](https://github.com/balena-io/wifi-connect).
+meta-chaos is a set of recipes for the poky build system, which enables cross-building GNU/Linux images for home automation projects. By enabling meta-chaos, you can cross-build some of the popular projects, such as [Homebridge](https://github.com/homebridge/homebridge) and [wifi-connect](https://github.com/balena-io/wifi-connect).
 
 The main purpose of meta-chaos is to provide reference Linux distribution for home automation systems satisfying the following needs.
 
