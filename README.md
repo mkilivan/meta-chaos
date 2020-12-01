@@ -38,7 +38,7 @@ $ sudo pip3 install kas
 ```
 ### Build target images
 ```
-$ kas build kas-poky.yml:board-rpi.yml
+$ kas build kas-poky-rpi.yml
 ```
 ### Using the build output
 After a successful build, the images and build artifacts are placed in `tmp/deploy/images/raspberrypi3/`. The image will have `.rpi-sdimg` suffix. Use [balenaEtcher](https://www.balena.io/etcher) to write the image on SD card.

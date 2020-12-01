@@ -15,7 +15,7 @@ jobs:
 
       - name: Building poky image for rpi
         run: |
-          kas build kas-poky.yml:board-rpi.yml
+          kas build kas-poky-rpi.yml
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
