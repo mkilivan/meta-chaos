@@ -10,14 +10,14 @@ repos:
     
   poky:
     url: https://git.yoctoproject.org/git/poky
-    refspec: dunfell
+    refspec: gatesgarth
     layers:
       meta:
       meta-poky:
       
   meta-openembedded:
     url: http://git.openembedded.org/meta-openembedded
-    refspec: dunfell
+    refspec: gatesgarth
     layers:
       meta-oe:
       meta-networking:
