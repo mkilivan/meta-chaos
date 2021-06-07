@@ -20,7 +20,9 @@ This layer depends on:
     revision: HEAD
 
     URI: git://git.openembedded.org/meta-openembedded
-    layers: meta-oe, meta-networking, meta-python
+    layers: meta-oe
+            meta-networking
+            meta-python
     branch: master
     revision: HEAD
 
