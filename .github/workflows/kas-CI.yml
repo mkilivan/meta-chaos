@@ -22,4 +22,4 @@ jobs:
         with:
           path: |
             build/conf
-            build/deploy/images/**/homebridge-image-raspberrypi3.rpi-sdimg
+            ${{env.TMPDIR}}/deploy/images/**/homebridge-image-raspberrypi3.rpi-sdimg
