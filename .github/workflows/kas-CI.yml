@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: kas-latest
+    runs-on: self-hosted
     env:
       DL_DIR: ${{ secrets.DL_DIR }}
       TMPDIR: ${{ secrets.TMPDIR }}
@@ -12,16 +12,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Pip Installer
-        uses: BSFishy/pip-action@v1
-        with:
-          packages: |
-            kas
+      - name: renistall certificates
+        run: |
+          # sudo apt-get install -y --reinstall ca-certificates
+          # sudo mkdir /usr/local/share/ca-certificates/cacert.org
+          # sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
+          # sudo update-ca-certificates
+          git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt
 
       - name: Building poky image for rpi
         run: |
