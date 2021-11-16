@@ -27,6 +27,10 @@ repos:
     url: https://github.com/meta-rust/meta-rust
     refspec: hardknott
 
+  # meta-iot-cloud:
+  #   url: https://github.com/intel-iot-devkit/meta-iot-cloud
+  #   refspec: hardknott
+
 bblayers_conf_header:
   standard: |
     POKY_BBLAYERS_CONF_VERSION = "2"

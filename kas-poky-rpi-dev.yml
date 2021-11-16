@@ -1,21 +1,9 @@
 header:
   version: 1
   includes:
-    - kas-poky.yml
-
-machine: raspberrypi3
-
-repos:
-  meta-raspberrypi:
-    url : "git://git.yoctoproject.org/meta-raspberrypi"
-    refspec : hardknott
+    - kas-poky-rpi.yml
 
 local_conf_header:
-  rpi-specific: |
-    ENABLE_UART = "1"
-    IMAGE_FSTYPES = "rpi-sdimg"
-    DISTRO_FEATURES_append = " wifi"
-
   development packages: >
     IMAGE_INSTALL_append = " \
       git \

@@ -1,4 +1,4 @@
-name: build
+name: Raspberry Pi
 
 on: [push, pull_request]
 
@@ -12,13 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: renistall certificates
-        run: |
-          # sudo apt-get install -y --reinstall ca-certificates
-          # sudo mkdir /usr/local/share/ca-certificates/cacert.org
-          # sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
-          # sudo update-ca-certificates
-          git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt
 
       - name: Building poky image for rpi
         run: |
