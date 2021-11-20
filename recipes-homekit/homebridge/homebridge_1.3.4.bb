@@ -181,7 +181,7 @@ RDEPENDS_${PN} += " \
 
 inherit npm
 
-do_install_append() {
+do_install:append() {
 	install -d ${D}/var/lib/homebridge/
 	install -m 644 ${WORKDIR}/config.json ${D}/var/lib/homebridge/
 

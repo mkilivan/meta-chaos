@@ -1,32 +1,32 @@
 inherit deploy
 
-FILESEXTRAPATHS_append := ":${THISDIR}/files"
+FILESEXTRAPATHS:append := ":${THISDIR}/files"
 
-SRC_URI_append = " \
+SRC_URI:append = " \
     file://NetworkManager.conf.systemd \
     file://NetworkManager.conf \
     file://nm-tmpfiles.conf \
     "
 
-RDEPENDS_${PN}_append = " \
+RDEPENDS_${PN}:append = " \
     chrony \
     chronyc \
     "
-FILES_${PN}_append = " ${sysconfdir}/*"
+FILES_${PN}:append = " ${sysconfdir}/*"
 EXTRA_OECONF += " \
     --disable-ovs \
     "
-PACKAGECONFIG_append = " modemmanager ppp"
+PACKAGECONFIG:append = " modemmanager ppp"
 
 # The external DHCP client doesn't work well with our `ipv4.dhcp-timeout`
 # configuration. Switch to the internal one.
-PACKAGECONFIG_remove = "dhclient"
+PACKAGECONFIG:remove = "dhclient"
 EXTRA_OECONF += " \
 	--with-config-dhcp-default=internal \
 	--with-dhclient=no \
 	"
 
-do_install_append() {
+do_install:append() {
     install -d ${D}${sysconfdir}/tmpfiles.d
     install -m 0644 ${WORKDIR}/nm-tmpfiles.conf ${D}${sysconfdir}/tmpfiles.d/
 

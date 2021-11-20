@@ -147,7 +147,7 @@ RDEPENDS_${PN} += " \
     networkmanager \
     "
 
-do_install_append () {
+do_install:append () {
     install -d ${D}${datadir}/wifi-connect/ui
     cp -r ${S}/ui/build/* ${D}${datadir}/wifi-connect/ui
 

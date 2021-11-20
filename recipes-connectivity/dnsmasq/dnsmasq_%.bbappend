@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += " \
 	file://network-manager \
@@ -6,7 +6,7 @@ SRC_URI += " \
 
 inherit update-alternatives
 
-do_install_append () {
+do_install:append () {
     install -d ${D}${sysconfdir}/dnsmasq.d
     install -c -m 0644 ${WORKDIR}/network-manager ${D}${sysconfdir}/dnsmasq.d/
 }

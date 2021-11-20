@@ -2,34 +2,30 @@ header:
   version: 8
 
 distro: poky
-target: 
+target:
   - homebridge-image
 
 repos:
   meta-chaos:
-    
+
   poky:
     url: https://git.yoctoproject.org/git/poky
-    refspec: hardknott
+    refspec: honister
     layers:
       meta:
       meta-poky:
-      
+
   meta-openembedded:
     url: http://git.openembedded.org/meta-openembedded
-    refspec: hardknott
+    refspec: honister
     layers:
       meta-oe:
       meta-networking:
       meta-python:
-      
-  meta-rust:
-    url: https://github.com/meta-rust/meta-rust
-    refspec: hardknott
 
   # meta-iot-cloud:
   #   url: https://github.com/intel-iot-devkit/meta-iot-cloud
-  #   refspec: hardknott
+  #   refspec: honister
 
 bblayers_conf_header:
   standard: |
@@ -40,14 +36,14 @@ bblayers_conf_header:
 local_conf_header:
   Reduce diskspace: |
     INHERIT += "rm_work_and_downloads"
-  
+
   Strip down unneeded features: |
-    POKY_DEFAULT_DISTRO_FEATURES_remove = "ptest"
-    POKY_DEFAULT_DISTRO_FEATURES_remove = "wayland"
-    DISTRO_FEATURES_DEFAULT_remove = "x11"
+    POKY_DEFAULT_DISTRO_FEATURES:remove = "ptest"
+    POKY_DEFAULT_DISTRO_FEATURES:remove = "wayland"
+    DISTRO_FEATURES_DEFAULT:remove = "x11"
 
   Switch to systemd: |
-    DISTRO_FEATURES_append = " systemd"
+    DISTRO_FEATURES:append = " systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
     DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
     VIRTUAL-RUNTIME_initscripts = ""

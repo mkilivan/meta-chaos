@@ -8,16 +8,16 @@ machine: raspberrypi3
 repos:
   meta-raspberrypi:
     url : "git://git.yoctoproject.org/meta-raspberrypi"
-    refspec : hardknott
+    refspec : honister
 
 local_conf_header:
   rpi-specific: |
     ENABLE_UART = "1"
     IMAGE_FSTYPES = "rpi-sdimg"
-    DISTRO_FEATURES_append = " wifi"
+    DISTRO_FEATURES:append = " wifi"
 
   development packages: >
-    IMAGE_INSTALL_append = " \
+    IMAGE_INSTALL:append = " \
       git \
       minicom \
       mosquitto \
@@ -26,5 +26,6 @@ local_conf_header:
       packagegroup-core-buildessential \
       python3 \
       python3-pip \
+      python3-pyserial \
       python3-requests \
     "
