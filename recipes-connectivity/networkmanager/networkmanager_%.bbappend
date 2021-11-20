@@ -8,11 +8,11 @@ SRC_URI:append = " \
     file://nm-tmpfiles.conf \
     "
 
-RDEPENDS_${PN}:append = " \
+RDEPENDS:${PN}:append = " \
     chrony \
     chronyc \
     "
-FILES_${PN}:append = " ${sysconfdir}/*"
+FILES:${PN}:append = " ${sysconfdir}/*"
 EXTRA_OECONF += " \
     --disable-ovs \
     "

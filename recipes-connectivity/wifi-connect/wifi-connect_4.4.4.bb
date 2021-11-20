@@ -143,7 +143,7 @@ LICENSE = "Apache-2.0"
 
 DEPENDS = "libdbus-c++"
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     networkmanager \
     "
 
@@ -159,14 +159,14 @@ do_install:append () {
     install -c -m 0755 ${WORKDIR}/start-wifi-connect.sh ${D}${bindir}
 }
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/ui \
     ${systemd_unitdir}/system/wifi-connect.service \
 "
 
 inherit systemd
 
-SYSTEMD_SERVICE_${PN} = "${@bb.utils.contains('DISTRO_FEATURES','systemd','wifi-connect.service','',d)}"
+SYSTEMD_SERVICE:${PN} = "${@bb.utils.contains('DISTRO_FEATURES','systemd','wifi-connect.service','',d)}"
 
 # includes this file if it exists but does not fail
 # this is useful for anything you may want to override from

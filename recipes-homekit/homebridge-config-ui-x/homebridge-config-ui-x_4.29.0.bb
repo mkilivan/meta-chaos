@@ -10,8 +10,8 @@ SRC_URI = " \
 S = "${WORKDIR}/npm"
 
 DEPENDS = "libuv"
-RDEPENDS_${PN} = "bash"
+RDEPENDS:${PN} = "bash"
 
 inherit npm
 
-LICENSE_${PN} = "MIT"
+LICENSE:${PN} = "MIT"

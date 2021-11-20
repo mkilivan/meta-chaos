@@ -19,9 +19,9 @@ SRCREV = "1e89697e1498e23b62c1ebe53ec3d636c9af26e9"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS_${PN} += "homebridge"
+RDEPENDS:${PN} += "homebridge"
 
 inherit npm
 
-LICENSE_${PN} = "MIT"
-LICENSE_${PN}-energenie-ener314rt = "MIT"
+LICENSE:${PN} = "MIT"
+LICENSE:${PN}-energenie-ener314rt = "MIT"
