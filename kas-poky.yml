@@ -23,10 +23,6 @@ repos:
       meta-networking:
       meta-python:
 
-  # meta-iot-cloud:
-  #   url: https://github.com/intel-iot-devkit/meta-iot-cloud
-  #   refspec: honister
-
 bblayers_conf_header:
   standard: |
     POKY_BBLAYERS_CONF_VERSION = "2"

@@ -20,7 +20,6 @@ local_conf_header:
     IMAGE_INSTALL:append = " \
       git \
       minicom \
-      mosquitto \
       nodejs-npm \
       openssh \
       packagegroup-core-buildessential \
