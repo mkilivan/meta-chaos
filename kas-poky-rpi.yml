@@ -1,5 +1,5 @@
 header:
-  version: 1
+  version: 8
   includes:
     - kas-poky.yml
 
@@ -8,6 +8,7 @@ machine: raspberrypi3
 repos:
   meta-raspberrypi:
     url : "git://git.yoctoproject.org/meta-raspberrypi"
+    path: layers/meta-raspberrypi
     refspec : honister
 
 local_conf_header:

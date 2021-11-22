@@ -1,4 +1,4 @@
-name: Raspberry Pi
+name: Raspberry Pi 3
 
 on: [push, pull_request]
 
@@ -14,12 +14,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Building poky image for rpi
-        run: |
-          kas build kas-poky-rpi.yml
+        run: kas build kas-poky-rpi.yml
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: Raspberry Pi 3 Image
-          path: |
-            ${{env.TMPDIR}}/deploy/images/raspberrypi3/homebridge-image-raspberrypi3.rpi-sdimg
+          path: ${{env.TMPDIR}}/deploy/images/raspberrypi3/homebridge-image-raspberrypi3.rpi-sdimg

@@ -10,6 +10,7 @@ repos:
 
   poky:
     url: https://git.yoctoproject.org/git/poky
+    path: layers/poky
     refspec: honister
     layers:
       meta:
@@ -17,6 +18,7 @@ repos:
 
   meta-openembedded:
     url: http://git.openembedded.org/meta-openembedded
+    path: layers/meta-openembedded
     refspec: honister
     layers:
       meta-oe:
