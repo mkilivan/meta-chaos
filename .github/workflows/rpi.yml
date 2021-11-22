@@ -20,6 +20,6 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
+          name: Raspberry Pi 3 Image
           path: |
-            build/conf
-            ${{env.TMPDIR}}/deploy/images/**/homebridge-image-raspberrypi3.rpi-sdimg
+            ${{env.TMPDIR}}/deploy/images/raspberrypi3/homebridge-image-raspberrypi3.rpi-sdimg
