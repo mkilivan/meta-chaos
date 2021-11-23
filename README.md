@@ -26,10 +26,6 @@ This layer depends on:
     branch: master
     revision: HEAD
 
-    URI: git://github.com/meta-rust/meta-rust
-    branch: master
-    revision: HEAD
-
 ## Quick Start
 This section introduces how to generate the minimal system with meta-chaos and how to run it on a [Raspberry Pi](https://www.raspberrypi.org/) board.
 ### Setup build environment
