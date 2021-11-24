@@ -38,7 +38,7 @@ bblayers_conf_header:
 
 local_conf_header:
   Reduce diskspace: |
-    INHERIT += "rm_work_and_downloads"
+    # INHERIT += "rm_work_and_downloads"
 
   Strip down unneeded features: |
     POKY_DEFAULT_DISTRO_FEATURES:remove = "ptest"

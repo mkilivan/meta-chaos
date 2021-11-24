@@ -18,5 +18,8 @@ LICENSE:${PN} = "MIT"
 
 do_install:append() {
      # Remove prebuild binaries
-    rm -rf ${D}/${libdir}/node_modules/${BPN}/node_modules/node-pty-prebuilt-multiarch/prebuilds/
+    rm -rf ${D}/${libdir}/node_modules/${BPN}/node_modules/node-pty-prebuilt-multiarch/prebuilds/linux-x64
+    rm -rf ${D}/${libdir}/node_modules/${BPN}/node_modules/node-pty-prebuilt-multiarch/prebuilds/linux-ia32
+    rm -rf ${D}/${libdir}/node_modules/${BPN}/node_modules/node-pty-prebuilt-multiarch/prebuilds/linux-arm64
+    rm -rf ${D}/${libdir}/node_modules/${BPN}/node_modules/node-pty-prebuilt-multiarch/prebuilds/linux-arm
 }
