@@ -28,4 +28,5 @@ local_conf_header:
       python3-pip \
       python3-pyserial \
       python3-requests \
+      sudo \
     "
